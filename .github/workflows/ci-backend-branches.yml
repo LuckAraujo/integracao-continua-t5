@@ -7,8 +7,7 @@ on:
       - '!main'
     paths:
       - 'sgcmapi/**'
-  workflow_dispatch:
-
+    
 
 jobs:
     main:
@@ -20,7 +19,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
-          uses: action/checkout@v4
+          uses: actions/checkout@v4
         - name: Merge brach
           uses: devmasx/merge-branch@1.4.0
           with:
