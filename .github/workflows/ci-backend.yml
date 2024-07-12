@@ -43,6 +43,7 @@ jobs:
             java:
               - '**/*.java'
       - name: Merge brach
+        if: steps.filter.outputs.java == 'false'
         uses: devmasx/merge-branch@1.4.0
         with:
           type: now
