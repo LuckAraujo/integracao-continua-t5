@@ -36,4 +36,4 @@ jobs:
           
           - name: Teste
             working-directory: sgcmapp/
-            run: ng test --browser=ChromeHeadless --no-watch
+            run: ng test --browsers=ChromeHeadless --no-watch
