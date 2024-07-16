@@ -175,3 +175,43 @@ A demonstração de uso das ferramentas e tecnologias abordadas na capacitação
 - [Histórias de usuário](https://github.com/webacademyufac/sgcmdocs#histórias-de-usuário)
 - [Diagrama de Classes](https://github.com/webacademyufac/sgcmdocs#diagrama-de-classes)
 - [Diagrama Entidade Relacionamento](https://github.com/webacademyufac/sgcmdocs#diagrama-entidade-relacionamento)
+
+## Atividades práticas
+
+> [!IMPORTANT]
+>
+> - As atividades serão realizadas com o GitHub Classroom e podem ser acessadas pelos links nas descrições das atividades.
+> - No primeiro acesso, _**cada aluno deverá selecionar seu nome na lista para vincular sua conta no GitHub**_ e aceitar o convite para a atividade prática.
+> - O repositório da atividade prática será criado automaticamente para cada aluno ou grupo (compartilhado entre os membros).
+> - O aluno deverá clonar o repositório para seu computador, fazer as modificações necessárias e subir o repositório para o GitHub (`git push`).
+> - Não é necessário nenhuma outra ação para submeter a atividade.
+> - Atividades em grupo:
+>   - Ao acessar o link da atividade, o aluno deverá criar seu grupo ou ingressar no seu respectivo grupo se existir.
+>   - O nome do grupo deve seguir o padrão: `Time_X`, onde `X` é o número do grupo.
+>   - _**Todos os membros dos grupos devem participar das atividades**_, registrando esta participação por meio da identificação dos commits com seus respectivos usuários no GitHub.
+
+1. [INDIVIDUAL] Modificar o workflow para que o _**job**_ que compila o projeto do back-end e realiza os testes seja dividido em dois _**jobs**_: um para compilar o projeto e outro para os testes.
+
+    - Link da atividade: <https://classroom.github.com/a/x3ke4bvO>
+    - Entrega: 11/07/2024 - 18:00h
+
+    **Solução:** <https://github.com/webacademyufac/integracao-continua-t5/commit/d7bb4c2>
+
+2. [INDIVIDUAL] Criar workflow de implantação contínua para o projeto front-end utilizando o GitHub Actions.
+
+    - A implantação pode ser feita em qualquer plataforma. Exemplos:
+      - Render (com Docker, a exemplo do que foi feito para aplicação back-end)
+        - Dockerfile já está disponível no diretório do projeto front-end.
+      - Netlify (não tem suporte para Docker): <https://www.netlify.com/>
+      - Vercel (não tem suporte para Docker): <https://vercel.com/>
+    - Antes do _**job**_ de _**deploy**_, deve ser executado o workflow de integração contínua do front-end.
+    - Deve ser criado também um _**job**_ para executar os testes E2E.
+      - Comando para executar os testes: `ng run sgcmapp:cypress-run`
+    - O _**job**_ de _**deploy**_ deve ser executado apenas se o _**job**_ de testes E2E e o do CI do front-end forem bem-sucedidos.
+    - **ATENÇÃO**:
+      - Configurar a constante `API_URL` no arquivo `environment.ts` do projeto front-end.
+      - Modificar as configurações de CORS no back-end para adicionar o host da aplicação front-end em produção.
+      - A implantação deve ser feita obrigatoriamente por meio do GitHub Actions.
+
+    - Link da atividade: <https://classroom.github.com/a/kJvvWUvv>
+    - Entrega: 16/07/2024 - 18:00h

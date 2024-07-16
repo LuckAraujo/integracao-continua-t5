@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: CI Front-end
+=======
+name: CI Front-end Main
+>>>>>>> cef18157abf6e0b8a4133011100d5d8a5eb81e70
 
 on:
   push:
@@ -12,6 +16,7 @@ on:
     paths:
       - 'sgcmapp/**'
 
+<<<<<<< HEAD
 
 jobs:
     build:
@@ -37,3 +42,26 @@ jobs:
           - name: Teste
             working-directory: sgcmapp/
             run: ng test --browsers=ChromeHeadless --no-watch
+=======
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Cliente Angular
+        run: npm install -g @angular/cli@17.3.8
+      - name: Instalação de dependências
+        working-directory: sgcmapp/
+        run: npm install
+      - name: Build
+        working-directory: sgcmapp/
+        run: ng build
+      - name: Teste
+        working-directory: sgcmapp/
+        run: ng test --browsers=ChromeHeadless --no-watch
+>>>>>>> cef18157abf6e0b8a4133011100d5d8a5eb81e70

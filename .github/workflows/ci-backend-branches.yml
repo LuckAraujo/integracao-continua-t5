@@ -7,6 +7,7 @@ on:
       - '!main'
     paths:
       - 'sgcmapi/**'
+<<<<<<< HEAD
     
 
 jobs:
@@ -26,3 +27,24 @@ jobs:
             type: now
             target_branch: main
             github_token: ${{ github.token }}
+=======
+
+jobs:
+
+  main:
+    name: CI Workflow Main
+    uses: ./.github/workflows/ci-backend.yml
+
+  merge:
+    needs: main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Merge branch
+        uses: devmasx/merge-branch@1.4.0
+        with:
+          type: now
+          target_branch: main
+          github_token: ${{ github.token }}
+>>>>>>> cef18157abf6e0b8a4133011100d5d8a5eb81e70
